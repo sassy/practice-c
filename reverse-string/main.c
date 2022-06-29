@@ -13,15 +13,15 @@ void
 reverse(char *string)
 {
     int i;
-    char tmp;
     int len = length(string);
 
     for (i = 0; i < len / 2; i++) {
-        tmp = string[i];
+        string[len] = string[i];
         string[i] = 'a';
         string[i] = string[len - 1 - i];
-        string[len - 1 - i ] = tmp;
+        string[len - 1 - i ] = string[len];
     }
+    string[len] = '\0';
 }
 
 int
